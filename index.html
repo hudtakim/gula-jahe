@@ -3,279 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Gula Jahe Alami Purworejo - Asli, Sehat & Tanpa Ampas</title>
-    <meta name="description" content="Nikmati Gula Jahe Alami khas Purworejo. Terbuat dari Jahe Emprit & Gula Kelapa murni. Pengiriman cepat dari Bandung. Cocok untuk imunitas keluarga.">
-    <meta name="keywords" content="gula jahe alami, gula jahe purworejo, jahe emprit, minuman tradisional, reseller gula jahe">
-    
+    <title>Gula Jahe Alami Purworejo - Hubungi Kami di Arcamanik</title>
     <style>
         :root {
             --pink-utama: #E91E63;
-            --pink-dark: #C2185B;
             --pink-soft: #FCE4EC;
-            --text-main: #2D3436;
+            --text-dark: #2D3436;
             --text-light: #636E72;
             --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        /* Base Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: var(--text-main);
-            background-color: #fdfdfd;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: #fdfdfd; color: var(--text-dark); line-height: 1.6; }
+
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+        /* Header */
+        header { background: var(--white); padding: 15px 0; border-bottom: 3px solid var(--pink-utama); position: sticky; top: 0; z-index: 100; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; color: var(--pink-utama); font-size: 1.3rem; }
+
+        /* Hero */
+        .hero { 
+            background: linear-gradient(rgba(233, 30, 99, 0.8), rgba(136, 14, 79, 0.9)), url('https://images.unsplash.com/photo-1599307734110-3882946569f1?q=80&w=2000') center/cover;
+            color: white; padding: 80px 0 120px; text-align: center; 
         }
 
-        /* Layout Container */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Product Card & Content */
+        .main-content { margin-top: -80px; padding-bottom: 60px; }
+        .card { 
+            background: white; border-radius: 20px; display: grid; grid-template-columns: 1fr; 
+            overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
         }
 
-        /* Navigation */
-        nav {
-            background: var(--white);
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* PERBAIKAN LIST FITUR (GRID SYSTEM) */
+        .features { list-style: none; margin: 25px 0; display: flex; flex-direction: column; gap: 12px; }
+        .feature-item { 
+            display: grid; 
+            grid-template-columns: 25px auto 1fr; /* Kolom Icon | Kolom Label | Kolom Deskripsi */
+            align-items: start; 
+            gap: 8px; 
         }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo { 
-            font-size: 1.4rem; 
-            font-weight: 800; 
-            color: var(--pink-utama); 
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-        .pirt { font-size: 0.75rem; color: var(--text-light); text-align: right; line-height: 1.2; }
+        .icon { color: #2ecc71; font-weight: bold; }
+        .label { font-weight: 800; color: var(--text-dark); white-space: nowrap; }
+        .desc { color: var(--text-light); font-size: 0.95rem; }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(233, 30, 99, 0.8), rgba(136, 14, 79, 0.9)), 
-                        url('https://images.unsplash.com/photo-1599307734110-3882946569f1?q=80&w=2000') center/cover no-repeat;
-            color: var(--white);
-            padding: 60px 0 100px;
-            text-align: center;
+        /* Alamat Section */
+        .address-box { 
+            background: var(--pink-soft); padding: 20px; border-radius: 12px; 
+            border-left: 5px solid var(--pink-utama); margin-top: 25px; 
         }
-        .hero h1 { 
-            font-size: clamp(1.8rem, 5vw, 3.2rem); 
-            margin-bottom: 20px; 
-            font-weight: 800;
-            line-height: 1.1;
-        }
-        .hero p { 
-            font-size: clamp(1rem, 2vw, 1.2rem); 
-            max-width: 750px; 
-            margin: 0 auto; 
-            opacity: 0.95; 
+        .address-box h4 { color: var(--pink-utama); margin-bottom: 5px; font-size: 1rem; }
+        .address-box p { font-size: 0.9rem; font-weight: 500; }
+
+        .btn-wa { 
+            display: block; background: #25D366; color: white; text-align: center; 
+            padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 25px;
         }
 
-        /* Product Section */
-        .product-section { margin-top: -60px; padding-bottom: 60px; }
-        
-        .product-card {
-            background: var(--white);
-            border-radius: 24px;
-            display: grid;
-            grid-template-columns: 1fr; /* Mobile default */
-            overflow: hidden;
-            box-shadow: var(--shadow);
+        /* Responsiveness */
+        @media (min-width: 768px) {
+            .card { grid-template-columns: 1fr 1.2fr; }
+            .details { padding: 50px; }
+        }
+        @media (max-width: 480px) {
+            .details { padding: 25px; }
+            .feature-item { grid-template-columns: 25px 1fr; } /* Stack label & desc di mobile */
+            .label { display: block; }
         }
 
-        .product-image {
-            background: #eee;
-            min-height: 300px;
-        }
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .product-details { padding: 30px; }
-        .badge {
-            background: var(--pink-soft);
-            color: var(--pink-utama);
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .product-details h2 { font-size: 2rem; margin: 15px 0; color: var(--pink-utama); }
-        .price { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; }
-        .price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
-
-        /* Feature List */
-        .features { list-style: none; margin-bottom: 30px; }
-        .features li { 
-            margin-bottom: 12px; 
-            display: flex; 
-            align-items: flex-start;
-            font-size: 0.95rem;
-        }
-        .features li::before { 
-            content: '✔'; 
-            color: #2ECC71; 
-            font-weight: bold; 
-            margin-right: 12px; 
-            margin-top: 2px;
-        }
-
-        /* CTA Button */
-        .btn-wa {
-            display: block;
-            background: #25D366;
-            color: var(--white);
-            text-align: center;
-            padding: 18px;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        .btn-wa:hover { 
-            background: #1EBB56; 
-            transform: translateY(-3px); 
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        /* Trust Grid */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        .trust-item {
-            text-align: center;
-            padding: 20px;
-            background: var(--white);
-            border-radius: 15px;
-            border: 1px solid #f0f0f0;
-        }
-        .trust-item h3 { font-size: 1.1rem; color: var(--pink-utama); margin-bottom: 8px; }
-        .trust-item p { font-size: 0.85rem; color: var(--text-light); }
-
-        /* Footer */
-        footer {
-            background: #f9f9f9;
-            padding: 50px 0 30px;
-            text-align: center;
-            border-top: 1px solid #eee;
-        }
-        .footer-desc { max-width: 600px; margin: 0 auto 30px; font-size: 0.9rem; color: var(--text-light); }
-
-        /* --- RESPONSIVENESS (Media Queries) --- */
-
-        /* Tablet & Kecil Laptop (768px ke atas) */
-        @media screen and (min-width: 768px) {
-            .product-card { grid-template-columns: 1fr 1fr; } /* Split image and text */
-            .product-details { padding: 50px; }
-            .hero { padding: 100px 0 140px; }
-        }
-
-        /* Desktop & Laptop Besar (1024px ke atas) */
-        @media screen and (min-width: 1024px) {
-            .product-details { padding: 60px; }
-            .product-image { min-height: 500px; }
-            .product-card { max-width: 1000px; margin: 0 auto; }
-            .trust-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        /* Mobile Optimization (Max 480px) */
-        @media screen and (max-width: 480px) {
-            header .container { flex-direction: column; gap: 5px; text-align: center; }
-            .pirt { text-align: center; font-size: 0.7rem; }
-            .product-details h2 { font-size: 1.6rem; }
-            .price { font-size: 1.8rem; }
-        }
+        .details { padding: 30px; }
+        .price { font-size: 2rem; color: var(--pink-utama); font-weight: 800; margin: 15px 0; }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="container">
-        <a href="#" class="logo">GULA JAHE ALAMI</a>
-        <div class="pirt">
-            <strong>P-IRT No:</strong><br>
-            2093306010157-21
-        </div>
+<header>
+    <div class="container nav-content">
+        <div class="logo">GULA JAHE ALAMI</div>
+        <div style="font-size: 0.7rem; text-align: right;">P-IRT NO.<br>2093306010157-21</div>
     </div>
-</nav>
+</header>
 
-<main>
-    <section class="hero">
-        <div class="container">
-            <h1>Gula Jahe Purworejo Asli<br>Hangat, Praktis, Higienis</h1>
-            <p>Terbuat dari perasan Jahe Emprit segar pilihan dan Gula Kelapa murni. Tanpa ampas berlebih, tanpa pengawet, dan siap seduh kapan saja.</p>
+<section class="hero">
+    <div class="container">
+        <h1>Gula Jahe Purworejo Asli</h1>
+        <p>Minuman kesehatan tradisional dari Jahe Emprit & Gula Kelapa murni tanpa bahan pengawet.</p>
+    </div>
+</section>
+
+<main class="container main-content">
+    <article class="card">
+        <div style="background: #eee;">
+            <img src="banner-bg.png" alt="Produk Gula Jahe" style="width:100%; height:100%; object-fit:cover;">
         </div>
-    </section>
+        <div class="details">
+            <span style="background: var(--pink-utama); color: white; padding: 3px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold;">BEST SELLER</span>
+            <h2>Gula Jahe Original</h2>
+            
+            <div class="price">Rp 20.000 <span style="font-size: 0.9rem; color: #999; font-weight: 400;">/ Pack (Isi 10)</span></div>
 
-    <section class="product-section">
-        <div class="container">
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="banner-bg.png" alt="Kemasan Gula Jahe Alami Purworejo Isi 10" loading="lazy">
-                </div>
-                <div class="product-details">
-                    <span class="badge">Terlaris</span>
-                    <h2>Gula Jahe Original</h2>
-                    <p style="color: var(--text-light); margin-bottom: 20px;">Minuman tradisional premium dengan rasa jahe yang mantap dan manis legit alami. Sangat cocok dinikmati saat cuaca dingin atau untuk menjaga stamina.</p>
-                    
-                    <div class="price">Rp 20.000 <span>/ Pack (Isi 10 Biji)</span></div>
-                    
-                    <ul class="features">
-                        <li><strong>100% Alami: </strong> Jahe & Gula Kelapa Pilihan</li>
-                        <li><strong>Tanpa Ampas: </strong> Tekstur halus mudah larut</li>
-                        <li><strong>Versatil: </strong> Enak dicampur kopi atau susu</li>
-                        <li><strong>Fresh Stock: </strong> Stok selalu diperbarui</li>
-                    </ul>
+            <ul class="features">
+                <li class="feature-item">
+                    <span class="icon">✓</span>
+                    <span class="label">100% Alami:</span>
+                    <span class="desc">Jahe & Gula Kelapa Pilihan</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon">✓</span>
+                    <span class="label">Tanpa Ampas:</span>
+                    <span class="desc">Tekstur halus mudah larut</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon">✓</span>
+                    <span class="label">Versatil:</span>
+                    <span class="desc">Enak dicampur kopi atau susu</span>
+                </li>
+                <li class="feature-item">
+                    <span class="icon">✓</span>
+                    <span class="label">Fresh Stock:</span>
+                    <span class="desc">Stok selalu diperbarui</span>
+                </li>
+            </ul>
 
-                    <a href="https://wa.me/6281215235330?text=Halo%20Admin%2C%20saya%20ingin%20order%20Gula%20Jahe%20Alami%20Purworejo" class="btn-wa">
-                        PESAN SEKARANG VIA WA
-                    </a>
-                </div>
-            </article>
-
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <h3>📍 Kirim Dari Bandung</h3>
-                    <p>Produk asli Purworejo dikirim langsung dari gudang pusat kami di Bandung.</p>
-                </div>
-                <div class="trust-item">
-                    <h3>📦 Packing Aman</h3>
-                    <p>Setiap pesanan dilapisi bubble wrap agar kemasan mika tidak pecah.</p>
-                </div>
-                <div class="trust-item">
-                    <h3>☕ Cara Seduh</h3>
-                    <p>Cukup seduh 1 keping dengan 1 gelas air panas. Praktis & nikmat.</p>
-                </div>
+            <div class="address-box">
+                <h4>📍 Lokasi Pengiriman:</h4>
+                <p>Cisaranten Kulon No. 10, Arcamanik, Bandung</p>
+                <small style="color: var(--text-light); display: block; margin-top: 5px;">(Bisa ambil langsung atau kirim via kurir)</small>
             </div>
+
+            <a href="https://wa.me/6281215235330?text=Halo%20Admin%2C%20saya%20mau%20order%20Gula%20Jahe%20dari%20Cisaranten" class="btn-wa">ORDER VIA WHATSAPP</a>
         </div>
-    </section>
+    </article>
 </main>
 
-<footer>
-    <div class="container">
-        <div class="footer-desc">
-            <strong>Gula Jahe Alami Purworejo</strong>
-            <p>Minuman kesehatan tradisional warisan leluhur yang diproses secara modern dan higienis. Kami berkomitmen memberikan produk dengan kualitas terbaik sampai ke tangan Anda.</p>
-        </div>
-        <p style="font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Gula Jahe Alami. All Rights Reserved.</p>
-    </div>
+<footer style="text-align: center; padding: 40px 0; color: #999; font-size: 0.8rem;">
+    <p>&copy; 2026 Gula Jahe Alami - Distribusi Bandung (Arcamanik). All Rights Reserved.</p>
 </footer>
 
 </body>

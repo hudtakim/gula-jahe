@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Gula Jahe Alami Purworejo - Asli, Sehat & Tanpa Ampas</title>
+    <meta name="description" content="Nikmati Gula Jahe Alami khas Purworejo. Terbuat dari Jahe Emprit & Gula Kelapa murni. Pengiriman cepat dari Bandung. Cocok untuk imunitas keluarga.">
+    <meta name="keywords" content="gula jahe alami, gula jahe purworejo, jahe emprit, minuman tradisional, reseller gula jahe">
+    
+    <style>
+        :root {
+            --pink-utama: #E91E63;
+            --pink-dark: #C2185B;
+            --pink-soft: #FCE4EC;
+            --text-main: #2D3436;
+            --text-light: #636E72;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Base Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main);
+            background-color: #fdfdfd;
+        }
+
+        /* Layout Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { 
+            font-size: 1.4rem; 
+            font-weight: 800; 
+            color: var(--pink-utama); 
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .pirt { font-size: 0.75rem; color: var(--text-light); text-align: right; line-height: 1.2; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(233, 30, 99, 0.8), rgba(136, 14, 79, 0.9)), 
+                        url('https://images.unsplash.com/photo-1599307734110-3882946569f1?q=80&w=2000') center/cover no-repeat;
+            color: var(--white);
+            padding: 60px 0 100px;
+            text-align: center;
+        }
+        .hero h1 { 
+            font-size: clamp(1.8rem, 5vw, 3.2rem); 
+            margin-bottom: 20px; 
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        .hero p { 
+            font-size: clamp(1rem, 2vw, 1.2rem); 
+            max-width: 750px; 
+            margin: 0 auto; 
+            opacity: 0.95; 
+        }
+
+        /* Product Section */
+        .product-section { margin-top: -60px; padding-bottom: 60px; }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 24px;
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile default */
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            background: #eee;
+            min-height: 300px;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-details { padding: 30px; }
+        .badge {
+            background: var(--pink-soft);
+            color: var(--pink-utama);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .product-details h2 { font-size: 2rem; margin: 15px 0; color: var(--pink-utama); }
+        .price { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; }
+        .price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
+
+        /* Feature List */
+        .features { list-style: none; margin-bottom: 30px; }
+        .features li { 
+            margin-bottom: 12px; 
+            display: flex; 
+            align-items: flex-start;
+            font-size: 0.95rem;
+        }
+        .features li::before { 
+            content: '✔'; 
+            color: #2ECC71; 
+            font-weight: bold; 
+            margin-right: 12px; 
+            margin-top: 2px;
+        }
+
+        /* CTA Button */
+        .btn-wa {
+            display: block;
+            background: #25D366;
+            color: var(--white);
+            text-align: center;
+            padding: 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-wa:hover { 
+            background: #1EBB56; 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Trust Grid */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        .trust-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 15px;
+            border: 1px solid #f0f0f0;
+        }
+        .trust-item h3 { font-size: 1.1rem; color: var(--pink-utama); margin-bottom: 8px; }
+        .trust-item p { font-size: 0.85rem; color: var(--text-light); }
+
+        /* Footer */
+        footer {
+            background: #f9f9f9;
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        .footer-desc { max-width: 600px; margin: 0 auto 30px; font-size: 0.9rem; color: var(--text-light); }
+
+        /* --- RESPONSIVENESS (Media Queries) --- */
+
+        /* Tablet & Kecil Laptop (768px ke atas) */
+        @media screen and (min-width: 768px) {
+            .product-card { grid-template-columns: 1fr 1fr; } /* Split image and text */
+            .product-details { padding: 50px; }
+            .hero { padding: 100px 0 140px; }
+        }
+
+        /* Desktop & Laptop Besar (1024px ke atas) */
+        @media screen and (min-width: 1024px) {
+            .product-details { padding: 60px; }
+            .product-image { min-height: 500px; }
+            .product-card { max-width: 1000px; margin: 0 auto; }
+            .trust-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* Mobile Optimization (Max 480px) */
+        @media screen and (max-width: 480px) {
+            header .container { flex-direction: column; gap: 5px; text-align: center; }
+            .pirt { text-align: center; font-size: 0.7rem; }
+            .product-details h2 { font-size: 1.6rem; }
+            .price { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="#" class="logo">GULA JAHE ALAMI</a>
+        <div class="pirt">
+            <strong>P-IRT No:</strong><br>
+            2093306010157-21
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>Gula Jahe Purworejo Asli<br>Hangat, Praktis, Higienis</h1>
+            <p>Terbuat dari perasan Jahe Emprit segar pilihan dan Gula Kelapa murni. Tanpa ampas berlebih, tanpa pengawet, dan siap seduh kapan saja.</p>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <div class="container">
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="./Media/banner-bg.png" alt="Kemasan Gula Jahe Alami Purworejo Isi 10" loading="lazy">
+                </div>
+                <div class="product-details">
+                    <span class="badge">Terlaris</span>
+                    <h2>Gula Jahe Original</h2>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Minuman tradisional premium dengan rasa jahe yang mantap dan manis legit alami. Sangat cocok dinikmati saat cuaca dingin atau untuk menjaga stamina.</p>
+                    
+                    <div class="price">Rp 20.000 <span>/ Pack (Isi 10 Biji)</span></div>
+                    
+                    <ul class="features">
+                        <li><strong>100% Alami: </strong> Jahe & Gula Kelapa Pilihan</li>
+                        <li><strong>Tanpa Ampas: </strong> Tekstur halus mudah larut</li>
+                        <li><strong>Versatil: </strong> Enak dicampur kopi atau susu</li>
+                        <li><strong>Fresh Stock: </strong> Stok selalu diperbarui</li>
+                    </ul>
+
+                    <a href="https://wa.me/6281215235330?text=Halo%20Admin%2C%20saya%20ingin%20order%20Gula%20Jahe%20Alami%20Purworejo" class="btn-wa">
+                        PESAN SEKARANG VIA WA
+                    </a>
+                </div>
+            </article>
+
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h3>📍 Kirim Dari Bandung</h3>
+                    <p>Produk asli Purworejo dikirim langsung dari gudang pusat kami di Bandung.</p>
+                </div>
+                <div class="trust-item">
+                    <h3>📦 Packing Aman</h3>
+                    <p>Setiap pesanan dilapisi bubble wrap agar kemasan mika tidak pecah.</p>
+                </div>
+                <div class="trust-item">
+                    <h3>☕ Cara Seduh</h3>
+                    <p>Cukup seduh 1 keping dengan 1 gelas air panas. Praktis & nikmat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-desc">
+            <strong>Gula Jahe Alami Purworejo</strong>
+            <p>Minuman kesehatan tradisional warisan leluhur yang diproses secara modern dan higienis. Kami berkomitmen memberikan produk dengan kualitas terbaik sampai ke tangan Anda.</p>
+        </div>
+        <p style="font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Gula Jahe Alami. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
